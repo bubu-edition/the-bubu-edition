@@ -68,6 +68,42 @@ color: #FFF4D6;
     button:active {
       opacity: 0.7;
     }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.16;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(81,58,43,0.035) 0px,
+        transparent 1px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle,
+        rgba(168,117,67,0.12) 1px,
+        transparent 1px
+      );
+    background-size: 100% 4px, 7px 7px;
+}
+
+body::after {
+    content: "A × N";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-size: 75px;
+    font-family: Georgia, serif;
+    letter-spacing: 12px;
+    color: rgba(81,58,43,0.07);
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+}
   </style>
 </head>
 
@@ -149,6 +185,9 @@ MEET THE MAIN CHARACTER →
   <section id="chapter1" style="display:none; padding:40px 20px; text-align:center; background:linear-gradient(135deg, #FFF4D6, #EBC76B); color:#513A2B; min-height:100vh;">
 
   <p style="letter-spacing:4px; font-size:12px;">CHAPTER 01</p>
+    <div style="display:inline-block; border:1px solid #A87543; padding:7px 14px; margin-top:15px; transform:rotate(-3deg); color:#A87543; font-family:Georgia,serif; font-size:11px; letter-spacing:2px;">
+  EST. 27 NOVEMBER 2026
+    </div>
 
   <h1 style="font-size:36px; margin-top:25px;">
     THE MAIN CHARACTER
@@ -181,17 +220,28 @@ NEXT CHAPTER →
 </button>  
   </section>
 <section id="chapter2" style="display:none; padding:40px 20px; text-align:center; background:linear-gradient(135deg, #FFF4D6, #EBC76B); color:#513A2B; min-height:100vh;">
-
+<div style="text-align:right; margin-top:5px;">
+  <span style="font-family:Georgia,serif; font-size:11px; color:#A87543; border-bottom:1px solid #A87543; padding-bottom:4px; letter-spacing:2px;">
+    PERSONAL ARCHIVE · NO. 02
+  </span>
+</div>
   <p style="letter-spacing:4px; font-size:12px; color:#A87543;">CHAPTER 02</p>
-
-  <h1 style="font-size:32px; margin-top:25px;">
-      THE UNEXPECTED PLOT TWIST🧪
+<div style="display:inline-block; border:1px dashed #A87543; padding:7px 14px; margin-top:15px; transform:rotate(2deg); color:#A87543; font-family:Georgia,serif; font-size:11px; letter-spacing:2px;">
+  THE DAY IT ALL BEGAN
+</div>
+  <h1 style="font-size:32px; margin-top:25px; font-family:Georgia,serif; letter-spacing:2px; color:#513A2B; text-shadow:1px 1px 2px #EBC76B;">
+    IUPAC NOTES?
   </h1>
 
   <p style="font-size:17px; margin-top:30px;">
     WHO KNEW IUPAC NOTES WOULD LEAD TO SOMETHING SOOO SPECIAL🫶🏻
   </p>
-
+<div style="margin-top:45px; font-family:Georgia,serif; font-style:italic; color:#A87543; font-size:19px;">
+  — A × N
+</div>
+<p style="font-size:10px; letter-spacing:3px; color:#A87543;">
+  FILED UNDER: UNEXPECTEDLY SPECIAL
+</p>
 </section>
 </body>
 </html>
