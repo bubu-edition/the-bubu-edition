@@ -261,6 +261,46 @@ NEXTT →
 
 
 
+<!-- LETTER VIEWER -->
+<div id="letterViewer" style="display:none; padding:25px 12px; text-align:center;">
+
+  <div id="letterPage1">
+    <img
+      src="Screenshot_2026-11-22-14-33-37-33_c0d35d5c8ea536686f7fb1c9f2f8f274.jpg"
+      style="width:100%; max-width:500px; height:auto; border-radius:5px;">
+  </div>
+
+  <div id="letterPage2" style="display:none;">
+    <img
+      src="Screenshot_2026-11-22-14-36-13-34_c0d35d5c8ea536686f7fb1c9f2f8f274.jpg"
+      style="width:100%; max-width:500px; height:auto; border-radius:5px;">
+  </div>
+
+  <button id="nextLetterPage"
+    onclick="document.getElementById('letterPage1').style.display='none'; document.getElementById('letterPage2').style.display='block'; this.style.display='none'; document.getElementById('prevLetterPage').style.display='inline-block';">
+    NEXT PAGE →
+  </button>
+
+  <button id="prevLetterPage" style="display:none;"
+    onclick="document.getElementById('letterPage2').style.display='none'; document.getElementById('letterPage1').style.display='block'; this.style.display='none'; document.getElementById('nextLetterPage').style.display='inline-block';">
+    ← PREVIOUS PAGE
+  </button>
+
+  <br><br>
+
+  <button onclick="document.getElementById('letterViewer').style.display='none'; document.getElementById('letterPage1').style.display='block'; document.getElementById('letterPage2').style.display='none'; document.getElementById('nextLetterPage').style.display='inline-block'; document.getElementById('prevLetterPage').style.display='none';">
+    ← GO BACK
+  </button>
+
+</div>
+
+<script>
+document.querySelector('button[onclick*="envelopeFlap"]')
+.addEventListener('click', function() {
+  document.getElementById('letterViewer').style.display = 'block';
+});
+</script>
+  
 </section>
 </body>
 </html>
