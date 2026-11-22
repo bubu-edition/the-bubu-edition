@@ -288,9 +288,19 @@ NEXTT →
 
   <br><br>
 
-  <button onclick="document.getElementById('letterViewer').style.display='none'; document.getElementById('letterPage1').style.display='block'; document.getElementById('letterPage2').style.display='none'; document.getElementById('nextLetterPage').style.display='inline-block'; document.getElementById('prevLetterPage').style.display='none';">
-    ← GO BACK
-  </button>
+  
+<button onclick="
+document.getElementById('letterViewer').style.display='none';
+document.getElementById('letterPage1').style.display='block';
+document.getElementById('letterPage2').style.display='none';
+document.getElementById('nextLetterPage').style.display='inline-block';
+document.getElementById('prevLetterPage').style.display='none';
+document.getElementById('envelopeFlap').style.transform='rotateX(0deg)';
+document.querySelector('button[onclick*=&quot;envelopeFlap&quot;]').style.display='inline-block';
+">
+← GO BACK
+</button>
+  
 
 </div>
 
