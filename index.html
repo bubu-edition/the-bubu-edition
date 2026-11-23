@@ -38,7 +38,7 @@ color: #513A2B;
     }
 
     h1 {
-      <h1 style="font-size:36px; margin-top:25px; color:#513A2B; text-shadow: 2px 2px 8px #D9A441;">
+      <h1 
       line-height: 1.2;
       letter-spacing: 2px;
       margin-bottom: 20px;
@@ -103,6 +103,31 @@ body::after {
     pointer-events: none;
     z-index: 9999;
     white-space: nowrap;
+}
+    #chapter3 {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  padding: 35px 15px;
+  background: linear-gradient(135deg, #FFF4D6, #EBC76B);
+  color: #513A2B;
+}
+
+.envelope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  max-width: 650px;
+  margin: 30px auto;
+}
+
+.secret-envelope {
+  min-height: 90px;
+  background: #FFF9EC;
+  border: 1px solid #A87543;
+  border-radius: 9px;
+  font-size: 27px;
+  padding: 10px;
 }
   </style>
 </head>
@@ -309,8 +334,120 @@ document.querySelector('button[onclick*="envelopeFlap"]')
 .addEventListener('click', function() {
   document.getElementById('letterViewer').style.display = 'block';
 });
+  const secretMessages = [
+  "GAYYY HUMAN",
+  "My comfort place",
+  "I hate you as much I hate shawarma",
+  "Absolute suaarrr",
+  "Reason of my bad mood",
+  "Forever the place i would run when the world gets mean",
+  "Yedzhavlaa",
+  "Tatii saa billota",
+  "I hate you as much I hate icecream",
+  "Unpaid therapist without any qualification",
+  "My favourite plot twist I didn't know I needed",
+  "I hate you as much I hate litchi",
+  'One and only exception to my "cutoff ppl ASAP" policy',
+  "I hate you as much I hate Kinderjoy",
+  "I hate you as much I hate coke",
+  "Can we keep this till just eternity?",
+  "Please come to me fast this lil baby can't stop crying for ur presence",
+  "My my my my my my my my my only myyyy boyyyy",
+  "I LOVE YOU"
+];
+  document.addEventListener("DOMContentLoaded", () => {
+  const envelopeGrid = document.getElementById("envelopeGrid");
+
+secretMessages.forEach((message, index) => {
+  const envelope = document.createElement("button");
+
+  envelope.className = "secret-envelope";
+  envelope.innerHTML = `💌<br><small>${index + 1}</small>`;
+
+  envelope.onclick = () => {
+  document.getElementById("secretText").textContent = message;
+  document.getElementById("secretPopup").style.display = "flex";
+};
+#secretPopup > div {
+  animation: popupAppear 0.4s ease;
+}
+
+@keyframes popupAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+  envelopeGrid.appendChild(envelope);
+});
+    });
 </script>
-  
+<button onclick="
+  document.getElementById('chapter2').style.display='none';
+  document.getElementById('chapter3').style.display='block';
+" style="margin:25px;">
+  NEXT CHAPTER: 19 LITTLE SECRETS →
+</button>  
 </section>
+  <section id="chapter3">
+
+  <p style="letter-spacing:3px; font-size:11px;">
+    PRIVATE COLLECTION · A × N
+  </p>
+
+  <h1 style="font-family:Georgia,serif; margin-top:25px;">
+    19 LITTLE SECRETS 💌
+  </h1>
+
+  <p style="margin-top:12px;">
+    A little collection of things I never say properly.
+  </p>
+
+  <div class="envelope-grid" id="envelopeGrid">
+  </div>
+<div id="secretPopup" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(45,25,15,0.75);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+">
+
+  <div style="
+    background:#FFF4D6;
+    border:2px solid #A87543;
+    border-radius:15px;
+    padding:35px 20px;
+    max-width:350px;
+    width:100%;
+    text-align:center;
+  ">
+
+    <p style="letter-spacing:3px; font-size:11px;">
+      A LITTLE SECRET 💌
+    </p>
+
+    <h2 id="secretText" style="
+      font-family:Georgia,serif;
+      margin:25px 0;
+      color:#513A2B;
+    "></h2>
+
+    <button onclick="
+      document.getElementById('secretPopup').style.display='none';
+    ">
+      BACK TO COLLECTION
+    </button>
+
+  </div>
+</div>
+  </section>
 </body>
 </html>
